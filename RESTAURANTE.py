@@ -27,3 +27,39 @@ inventario = [["Hamburguesa",100,8000],
               ["Nugguets",100, 4000]]
 clientes = []
 empleados = []
+
+# Menu
+while True:
+    print("\n========== Menu ==========")
+    print("[1] Ingresar Cliente 🧍🧍‍♀️")
+    print("[2] Ingresar Empleado 🚶")
+    print("[3] Mostrar clientes y empleados 👨‍👨‍👦‍👦")
+    print("[4] Pedir orden del dia 🍽🍔🍕🍟🌭")
+    print("[5] Pedir orden personalizada 🥪🌯🥓🧀")
+    print("[6] Inventario✅ ")
+    print("[0] Salir")
+    opcion = input("Opcion: ")
+
+    if opcion == "1":
+        temp = []
+        temp.append(input("Ingrese el nombre del cliente: "))
+        temp.append(input("Ingrese la cedula: "))
+        clientes.append(temp)
+    
+    if opcion == "2":
+        temp = []
+        temp.append(input("Ingrese el nombre del empleado: "))
+        temp.append(input("Ingrese la cedula: "))
+        empleados.append(temp)
+
+    if opcion == "3":
+        print("********** Clientes ***********")
+        for i in clientes:
+            print(i[1]," ",i[0])
+        
+        print("********** Empleados ***********")
+        for i in clientes:
+            print(i[1]," ",i[0])
+
+    if opcion == "4":
+        factura= []
