@@ -62,3 +62,108 @@ while True:
 
     if opcion == "4":
         factura= []
+
+# Validar ingreso del cliente
+        existe = False
+        cedula = input("Ingrese la cedula del cliente: ")
+        for i in clientes:
+            if i[1] == cedula:
+                existe = True
+                factura.append(i[0])
+        if existe == False:
+            factura.append("Desconocido")
+
+        # Ingresar pedido
+        detalles = []
+        while True:
+            print("********* Menu del dia *********")
+            i = 1
+            lista = []
+            for item in menus[dia]:
+                lista.append(item)
+                for j in inventario:
+                    if j[0] == item:
+                        print(i," ",item,"............",j[2])
+                i += 1
+            for item in plus:
+                lista.append(item)
+                for j in inventario:
+                    if j[0] == item:
+                        print(i," ",item,"............",j[2])
+                i += 1
+            indice = int(input("Escoja el indice del producto(0 para finalizar): ")) - 1
+            if indice == -1:
+                break
+            
+            for j in range(len(inventario)):
+                if lista[indice] == inventario[j][0]:
+                    detalles.append([inventario[j][0],inventario[j][2]])
+                    inventario[j][1] -= 1
+        factura.append(detalles)
+        factura.append(0)
+        pregunta = input("Desea aplicar el descuento de afiliados (si/no): ")
+        print("********** Factura ***********")
+        print("Cliente:",factura[0])
+        for i in factura[1]:
+            print(i[0],"...........",i[1])
+            factura[2] += i[1]
+        if pregunta == "si":
+            print("Subtotal = ",factura[2])
+            print("Descuento = ",(factura[2]*0.1))
+            print("Total = ",(factura[2] - (factura[2]*0.1)))
+        else:
+            print("Subtotal = ",factura[2])
+            print("Descuento = 0.0")
+            print("Total = ",factura[2])
+
+    if opcion == "5":
+        factura= []
+        # Validar ingreso del cliente
+        existe = False
+        cedula = input("Ingrese la cedula del cliente: ")
+        for i in clientes:
+            if i[1] == cedula:
+                existe = True
+                factura.append(i[0])
+        if existe == False:
+            factura.append("Desconocido")
+        # Ingresar pedido
+        detalles = []
+        while True:
+            print("********* Menu del dia *********")
+            i = 1
+            for j in inventario:
+                print(i," ",j[0],"............",j[2])
+                i += 1
+            indice = int(input("Escoja el indice del producto(0 para finalizar): ")) - 1
+            if indice == -1:
+                break
+
+            detalles.append([inventario[indice][0],inventario[indice][2]])
+            inventario[indice][1] -= 1
+        factura.append(detalles)
+        factura.append(0)
+        pregunta = input("Desea aplicar el descuento de afiliados (si/no): ")
+        print("********** Factura ***********")
+        print("Cliente:",factura[0])
+        for i in factura[1]:
+            print(i[0],"...........",i[1])
+            factura[2] += i[1]
+        if pregunta == "si":
+            print("Subtotal = ",factura[2])
+            print("Descuento = ",(factura[2]*0.1))
+            print("Total = ",(factura[2] - (factura[2]*0.1)))
+        else:
+            print("Subtotal = ",factura[2])
+            print("Descuento = 0.0")
+            print("Total = ",factura[2])
+
+    if opcion == "6":
+        print("******** Inventario **********")
+        for item in inventario:
+            print(item[0]," ",item[1])
+
+    # Salir
+    if opcion == "0":
+        break
+    
