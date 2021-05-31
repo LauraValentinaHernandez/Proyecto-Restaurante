@@ -18,24 +18,23 @@ menus = [["Hamburguesa","Perro caliente","Sandwich"],
          ["Hamburguesa","Perro caliente","Sandwich"]]
 plus = ["Papa francesa","Aro de cebolla","Nugguets"]
 bebidas = ["Gaseosa","Jugo","Leche"]
-inventario = [["Hamburguesa",100,8000],
-              ["Perro caliente",100, 7500],
-              ["Sandwich",100, 5000],
-              ["Burritos",100, 10000],
-              ["Papa francesa",100, 6000],
-              ["Aro de cebolla",100, 7000],
-              ["Nugguets",100, 4000]]
+inventario = [["Hamburguesa 🍔",100,8000],
+              ["Perro caliente🌭",100, 9000],
+              ["Sandwich 🥪",100, 5000],
+              ["Burritos 🌯",100, 10000],
+              ["Papa francesa 🍟",100, 10000],
+              ["Aro de ceboll 🍟a",100, 7000],
+              ["Nuggue 🍟🍟",100, 4000]]
 clientes = []
 empleados = []
-
-# Menu
+  # Menu
 while True:
     print("\n========== Menu ==========")
     print("[1] Ingresar Cliente 🧍🧍‍♀️")
     print("[2] Ingresar Empleado 🚶")
     print("[3] Mostrar clientes y empleados 👨‍👨‍👦‍👦")
     print("[4] Pedir orden del dia 🍽🍔🍕🍟🌭")
-    print("[5] Pedir orden personalizada 🥪🌯🥓🧀")
+    print("[5] Pedir orden personalizada 🥪🧀")
     print("[6] Inventario✅ ")
     print("[0] Salir")
     opcion = input("Opcion: ")
